@@ -1,6 +1,8 @@
 
-package Controllers;
+package Challenge2Controllers;
 
+
+import Challenge2Models.Challenge2RectangleModel;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -10,14 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /*
- * Purpose: Challenge 1 Circle Controller
+ * Purpose: Challenge 2 Rectangle Controller
  * Author: Greg Bahr
  * Revision: 1.0
  */
- 
-public class CircleController extends HttpServlet {
-    private static final String RESULTS_PAGE = "/circleResults.jsp";
-    private static final double PI = 3.14159265359;
+
+public class Challenge2RectangleController extends HttpServlet {
+    private static final String RESULTS_PAGE = "/challenge2Index.jsp";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -32,14 +33,19 @@ public class CircleController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        String length = request.getParameter("length");
+        double rectangleLength = Double.parseDouble(length);
         
-        String radius = request.getParameter("radius");
-        double circleRadius = Double.parseDouble(radius);
-       
-        double circleArea = PI * (circleRadius * circleRadius);
-        String cirArea = Double.toString(circleArea);
+        String width = request.getParameter("width");
+        double rectangleWidth = Double.parseDouble(width);
         
-        request.setAttribute("cirArea", cirArea);
+        Challenge2RectangleModel rectangleModel = 
+                new Challenge2RectangleModel();
+        
+        String recArea = rectangleModel.getRectangleArea(rectangleLength, 
+                rectangleWidth);
+        
+        request.setAttribute("recArea", recArea);
         RequestDispatcher dispatcher =
                     getServletContext().getRequestDispatcher(RESULTS_PAGE);
                 dispatcher.forward(request, response);

@@ -12,6 +12,18 @@
         <servlet-name>TriangleController</servlet-name>
         <servlet-class>Controllers.TriangleController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Challenge2RectangleController</servlet-name>
+        <servlet-class>Challenge2Controllers.Challenge2RectangleController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Challenge2TriangleController</servlet-name>
+        <servlet-class>Challenge2Controllers.Challenge2TriangleController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Challenge2CircleController</servlet-name>
+        <servlet-class>Challenge2Controllers.Challenge2CircleController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RectangleAreaController</servlet-name>
         <url-pattern>/RectangleAreaController</url-pattern>
@@ -23,6 +35,18 @@
     <servlet-mapping>
         <servlet-name>TriangleController</servlet-name>
         <url-pattern>/TriangleController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Challenge2RectangleController</servlet-name>
+        <url-pattern>/Challenge2RectangleController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Challenge2TriangleController</servlet-name>
+        <url-pattern>/Challenge2TriangleController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Challenge2CircleController</servlet-name>
+        <url-pattern>/Challenge2CircleController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

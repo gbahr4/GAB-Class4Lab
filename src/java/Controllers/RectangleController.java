@@ -1,8 +1,4 @@
-/*
- * Purpose: Challenge 1 Rectangle Controller
- * Author: Greg Bahr
- * Revision: 1.0
- */
+
 package Controllers;
 
 import java.io.IOException;
@@ -13,10 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author gregbahr
+/*
+ * Purpose: Challenge 1 Rectangle Controller
+ * Author: Greg Bahr
+ * Revision: 1.0
  */
+
 public class RectangleController extends HttpServlet {
     private static final String RESULTS_PAGE = "/rectangleResults.jsp";
     /**

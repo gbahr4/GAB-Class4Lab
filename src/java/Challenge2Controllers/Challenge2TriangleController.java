@@ -1,6 +1,8 @@
 
-package Controllers;
+package Challenge2Controllers;
 
+
+import Challenge2Models.Challenge2TriangleModel;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -10,14 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /*
- * Purpose: Challenge 1 Circle Controller
+ * Purpose: Challenge 2 Triangle Controller
  * Author: Greg Bahr
  * Revision: 1.0
  */
- 
-public class CircleController extends HttpServlet {
-    private static final String RESULTS_PAGE = "/circleResults.jsp";
-    private static final double PI = 3.14159265359;
+
+public class Challenge2TriangleController extends HttpServlet {
+  private static final String RESULTS_PAGE = "/challenge2Index.jsp";  
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -32,17 +33,23 @@ public class CircleController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        String sideALength = request.getParameter("sideALength");
+        double triangleSideALength = Double.parseDouble(sideALength);
         
-        String radius = request.getParameter("radius");
-        double circleRadius = Double.parseDouble(radius);
-       
-        double circleArea = PI * (circleRadius * circleRadius);
-        String cirArea = Double.toString(circleArea);
+        String sideBLength = request.getParameter("sideBLength");
+        double triangleSideBLength = Double.parseDouble(sideBLength);
         
-        request.setAttribute("cirArea", cirArea);
+        Challenge2TriangleModel triangleModel = 
+                new Challenge2TriangleModel();
+        
+        String sideCLength = triangleModel.getSideCLength(triangleSideALength, 
+                triangleSideBLength);
+        
+        request.setAttribute("sideCLength", sideCLength);
         RequestDispatcher dispatcher =
                     getServletContext().getRequestDispatcher(RESULTS_PAGE);
                 dispatcher.forward(request, response);
+    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
