@@ -1,5 +1,5 @@
 
-package Controllers;
+package Challenge1Controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/*
+/**
  * Purpose: Challenge 1 Circle Controller
  * Author: Greg Bahr
- * Revision: 1.0
+ * Revision: 2.0
  */
  
 public class CircleController extends HttpServlet {

@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/*
+/**
  * Purpose: Challenge 2 Rectangle Controller
  * Author: Greg Bahr
- * Revision: 1.0
+ * Revision: 2.0
  */
 
 public class Challenge2RectangleController extends HttpServlet {

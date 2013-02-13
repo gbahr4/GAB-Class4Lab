@@ -1,9 +1,10 @@
 <%-- 
     Purpose: Challenge 1 Rectangle Results
     Author: Greg Bahr
-    Revision: 1.0
+    Revision: 2.0
 --%>
 
+<%@page import="java.text.DecimalFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,9 +15,10 @@
     <body>
         <h1>Rectangle Results</h1>
         <%
+       
         Object recArea = request.getAttribute("recArea");
         out.println("<p> The area of the rectangle is: "
-             + recArea + " square inches</p>");
+             + recArea + "</p>");
         %>
         
         
